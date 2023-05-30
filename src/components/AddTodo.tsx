@@ -4,7 +4,7 @@ interface AddTodoProps {
 	addTodoItem: (e: React.FormEvent) => void;
 }
 
-const AddTodo = ({ todo, setTodo, addTodoItem }: AddTodoProps) => (
+export const AddTodo = ({ todo, setTodo, addTodoItem }: AddTodoProps) => (
 	<form
 		className="flex w-1/2 my-2 relative justify-center items-center z-10"
 		onSubmit={addTodoItem}
@@ -24,4 +24,3 @@ const AddTodo = ({ todo, setTodo, addTodoItem }: AddTodoProps) => (
 		</button>
 	</form>
 );
-export default AddTodo;

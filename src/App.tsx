@@ -1,9 +1,8 @@
 import { useState } from "react";
-import "./App.css";
 import { v4 as uuid } from "uuid";
-import AddTodo from "./components/AddTodo";
-import { Todo } from "./model";
-import TodoItem from "./components/TodoItem";
+import { AddTodo } from "./components/AddTodo";
+import { Todo } from "./utils/model";
+import { TodoItem } from "./components/TodoItem";
 
 function App() {
 	const [todo, setTodo] = useState<string>("");

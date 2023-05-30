@@ -1,4 +1,4 @@
-import { Todo } from "../model";
+import { Todo } from "../utils/model";
 import { CheckmarkOutline } from "@carbon/icons-react";
 import { Edit } from "@carbon/icons-react";
 import { TrashCan } from "@carbon/icons-react";
@@ -10,7 +10,7 @@ interface TodoItemProps {
 	setTodos: React.Dispatch<React.SetStateAction<Todo[]>>;
 }
 
-const TodoItem = ({ todoItem, todos, setTodos }: TodoItemProps) => {
+export const TodoItem = ({ todoItem, todos, setTodos }: TodoItemProps) => {
 	const [isEditing, setIsEditing] = useState<boolean>(false);
 	const [editText, setEditText] = useState<string>(todoItem.name);
 	const inputRef = useRef<HTMLInputElement>(null);
@@ -104,4 +104,3 @@ const TodoItem = ({ todoItem, todos, setTodos }: TodoItemProps) => {
 		</form>
 	);
 };
-export default TodoItem;
