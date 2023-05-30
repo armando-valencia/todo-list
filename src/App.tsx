@@ -3,7 +3,7 @@ import "./App.css";
 import { v4 as uuid } from "uuid";
 import AddTodo from "./components/AddTodo";
 import { Todo } from "./model";
-import TodoList from "./components/TodoList";
+import TodoItem from "./components/TodoItem";
 
 function App() {
 	const [todo, setTodo] = useState<string>("");
@@ -26,7 +26,16 @@ function App() {
 				Todo List
 			</h1>
 			<AddTodo todo={todo} setTodo={setTodo} addTodoItem={addTodoitem} />
-			<TodoList todos={todos} setTodos={setTodos} />
+			<div className="flex flex-col justify-evenly w-1/2">
+				{todos.map((todoItem) => (
+					<TodoItem
+						todoItem={todoItem}
+						key={todoItem.id}
+						todos={todos}
+						setTodos={setTodos}
+					/>
+				))}
+			</div>
 		</div>
 	);
 }
