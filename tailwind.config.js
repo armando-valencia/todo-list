@@ -4,7 +4,7 @@ export default {
 	theme: {
 		extend: {
 			animation: {
-				"bounce-short": "bounce .8s ease-in-out 1.5",
+				"bounce-short": "bounce .6s ease-in-out 1.5",
 			},
 		},
 	},
