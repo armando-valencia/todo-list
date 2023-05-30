@@ -12,6 +12,7 @@ function App() {
 	const addTodoitem = (e: React.FormEvent) => {
 		e.preventDefault();
 
+		// If there is a todo, add it to the end of the todos array
 		if (todo) {
 			setTodos([...todos, { id: uuid(), name: todo, isComplete: false }]);
 			setTodo("");
@@ -21,8 +22,8 @@ function App() {
 
 	return (
 		<div className="max-w-screen min-h-screen flex flex-col items-center bg-slate-600">
-			<h1 className="text-3xl md:text-4xl my-6 md:my-8 text-white z-1 text-center">
-				Todo List App
+			<h1 className="text-3xl md:text-4xl my-6 text-white z-1 text-center">
+				Todo List
 			</h1>
 			<AddTodo todo={todo} setTodo={setTodo} addTodoItem={addTodoitem} />
 			<TodoList todos={todos} setTodos={setTodos} />

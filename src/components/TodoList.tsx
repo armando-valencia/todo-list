@@ -8,7 +8,7 @@ interface TodoListProps {
 
 const TodoList = ({ todos, setTodos }: TodoListProps) => {
 	return (
-		<div className="flex justify-evenly w-3/4 flex-wrap">
+		<div className="flex flex-col justify-evenly w-1/2">
 			{todos.map((todoItem) => (
 				<TodoItem
 					todoItem={todoItem}
