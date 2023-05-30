@@ -21,7 +21,7 @@ function App() {
 
 	return (
 		<div className="max-w-screen min-h-screen flex flex-col items-center bg-slate-600">
-			<h1 className="uppercase text-3xl md:text-4xl my-6 md:my-8 text-white z-1 text-center ">
+			<h1 className="text-3xl md:text-4xl my-6 md:my-8 text-white z-1 text-center">
 				Todo List App
 			</h1>
 			<AddTodo todo={todo} setTodo={setTodo} addTodoItem={addTodoitem} />
