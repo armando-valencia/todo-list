@@ -13,7 +13,28 @@ function App() {
 
 		// If there is a todo, add it to the end of the todos array
 		if (todo) {
-			setTodos([...todos, { id: uuid(), name: todo, isComplete: false }]);
+			// Use the callback version of setTodos to add the new todo and sort the todos alphabetically
+			setTodos(() => {
+				// Add the new todo to the end of the todos array
+				const updatedTodos = [
+					...todos,
+					{ id: uuid(), name: todo, isComplete: false },
+				];
+
+				// Sort the todos alphabetically as new ones are added
+				const sortedTodos = updatedTodos.sort((a, b) => {
+					const fa = a.name.toLowerCase(),
+						fb = b.name.toLowerCase();
+
+					if (fa < fb) return -1;
+					if (fa > fb) return 1;
+					return 0;
+				});
+
+				// Return the sorted todos
+				return sortedTodos;
+			});
+
 			setTodo("");
 			console.log(todos);
 		}
